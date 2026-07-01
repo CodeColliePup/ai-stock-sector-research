@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AI 知识研究 - 深度产业洞察与战略分析</title>
+    <title>AI 知识研究</title>
     <style>
         * {
             margin: 0;
@@ -12,654 +12,183 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: #0a0e27;
-            color: #e0e6ed;
+            background: #f5f7fa;
+            color: #2c3e50;
             line-height: 1.7;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 16px;
+            padding: 16px 12px;
         }
-        /* 导航栏 */
-        nav {
-            background: rgba(10, 14, 39, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+        header {
+            text-align: center;
+            padding: 32px 16px;
+            background: linear-gradient(135deg, #1a2a6c 0%, #2d4a8a 50%, #4a6fa5 100%);
+            color: white;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(26, 42, 108, 0.25);
         }
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 56px;
-        }
-        .logo {
-            font-size: 1.3em;
-        }
-        .logo {
-            font-size: 1.5em;
+        header h1 {
+            font-size: 1.4em;
             font-weight: 700;
-            color: #fff;
+            margin-bottom: 8px;
             letter-spacing: -0.5px;
         }
-        .logo span {
-            color: #00d4ff;
-        }
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-        .nav-links a {
-            color: #8892b0;
-            text-decoration: none;
-            font-size: 0.95em;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #00d4ff;
-        }
-        /* Hero 区域 */
-        .hero {
-            padding: 100px 16px 60px;
-            text-align: center;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f4b 50%, #0f1535 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
-        }
-        .hero .container {
-            position: relative;
-            z-index: 1;
-        }
-        .hero h1 {
-            font-size: 2em;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-            background: linear-gradient(135deg, #fff 0%, #00d4ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .hero .subtitle {
-            font-size: 1em;
-            color: #8892b0;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-top: 32px;
-        }
-        .stat-item .number {
-            font-size: 1.8em;
-        }
-        .stat-item .label {
-            font-size: 0.8em;
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-item .number {
-            font-size: 2.5em;
-            font-weight: 700;
-            color: #00d4ff;
-            display: block;
-        }
-        .stat-item .label {
-            font-size: 0.9em;
-            color: #8892b0;
-            margin-top: 8px;
-        }
-        /* 研究板块 */
-        .section {
-            padding: 48px 16px;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .section-header h2 {
-            font-size: 1.6em;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #fff;
-        }
-        .section-header p {
-            color: #8892b0;
-            font-size: 0.95em;
-        }
-        .section-header .accent-line {
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #00d4ff, #0066ff);
-            margin: 20px auto 0;
-            border-radius: 2px;
-        }
-        /* 卡片网格 */
-        .card-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
+        header .subtitle {
+            font-size: 0.85em;
+            opacity: 0.85;
+            font-weight: 300;
         }
         .card {
-            background: linear-gradient(135deg, #13183a 0%, #1a1f4b 100%);
-            border-radius: 14px;
-            padding: 24px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border-left: 4px solid #4a6fa5;
         }
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 212, 255, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-        .card-icon.blue { background: rgba(0, 212, 255, 0.15); }
-        .card-icon.green { background: rgba(0, 255, 136, 0.15); }
-        .card-icon.purple { background: rgba(155, 89, 255, 0.15); }
-        .card-icon.orange { background: rgba(255, 159, 67, 0.15); }
-        .card-icon.red { background: rgba(255, 107, 107, 0.15); }
-        .card-icon.cyan { background: rgba(0, 206, 201, 0.15); }
-        .card h3 {
+        .card h2 {
             font-size: 1.15em;
-            color: #fff;
+            color: #1a2a6c;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eef2f7;
+        }
+        .report-list {
+            list-style: none;
+            padding: 0;
+        }
+        .report-item {
+            padding: 16px;
+            border-radius: 8px;
+            background: #f8fafc;
             margin-bottom: 12px;
+            transition: all 0.3s;
+            border: 1px solid #e8ecf1;
         }
-        .card p {
-            color: #8892b0;
-            font-size: 0.9em;
-            line-height: 1.7;
+        .report-item:hover {
+            background: #eef2f7;
+            border-color: #4a6fa5;
         }
-        .card .meta {
-            display: flex;
-            gap: 16px;
-            margin-top: 20px;
+        .report-item a {
+            color: #1a2a6c;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .report-item .date {
             font-size: 0.85em;
-            color: #5a6a8a;
+            color: #666;
         }
-        .card .meta span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        .report-item .desc {
+            font-size: 0.9em;
+            color: #4a5568;
+            margin-top: 6px;
+            line-height: 1.6;
         }
         .tag {
             display: inline-block;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 20px;
-            font-size: 0.8em;
+            font-size: 0.75em;
             font-weight: 600;
-            margin-top: 16px;
-        }
-        .tag-new {
-            background: rgba(0, 255, 136, 0.15);
-            color: #00ff88;
+            margin-top: 8px;
+            margin-right: 6px;
         }
         .tag-hot {
-            background: rgba(255, 107, 107, 0.15);
-            color: #ff6b6b;
+            background: #fee;
+            color: #c33;
         }
-        .tag-updated {
-            background: rgba(0, 212, 255, 0.15);
-            color: #00d4ff;
+        .tag-new {
+            background: #e8f5e9;
+            color: #2e7d32;
         }
-        /* 最新报告 */
-        .featured-report {
-            background: linear-gradient(135deg, #13183a 0%, #1a1f4b 100%);
-            border-radius: 16px;
-            padding: 24px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-        .featured-report .content {
-            flex: 1;
-        }
-        .featured-report h3 {
-            font-size: 1.2em;
-            color: #fff;
-            margin-bottom: 16px;
-        }
-        .featured-report p {
-            color: #8892b0;
-            margin-bottom: 20px;
-            line-height: 1.7;
-            font-size: 0.9em;
-        }
-        .featured-report .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            font-size: 0.95em;
-            background: linear-gradient(135deg, #00d4ff 0%, #0066ff 100%);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .featured-report .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-        }
-        .featured-report .preview {
-            width: 100%;
-            height: 120px;
-            margin-top: 20px;
-            background: linear-gradient(135deg, #1a2a6c 0%, #2d4a8a 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-            flex-shrink: 0;
-        }
-        /* 分类标签 */
-        .category-tabs {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-            margin-bottom: 28px;
-            flex-wrap: wrap;
-        }
-        .category-tab {
-            padding: 8px 16px;
-            font-size: 0.85em;
-            border-radius: 30px;
-            background: rgba(255,255,255,0.05);
-            color: #8892b0;
-            border: 1px solid rgba(255,255,255,0.08);
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.95em;
-        }
-        .category-tab:hover, .category-tab.active {
-            background: rgba(0, 212, 255, 0.15);
-            color: #00d4ff;
-            border-color: rgba(0, 212, 255, 0.3);
-        }
-        /* 关于区域 */
-        .about-section {
-            background: linear-gradient(135deg, #0d1133 0%, #13183a 100%);
-            padding: 48px 16px;
-            text-align: center;
-        }
-        .about-section h2 {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-        .about-section p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: #8892b0;
-            line-height: 1.8;
-        }
-        /* Footer */
         footer {
-            background: #060914;
-            padding: 32px 16px;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 20px;
+            color: #888;
+            font-size: 0.85em;
+            margin-top: 20px;
         }
-        footer p {
-            color: #5a6a8a;
-            font-size: 0.9em;
-        }
-        footer a {
-            color: #00d4ff;
-            text-decoration: none;
-        }
-        /* 平板适配 */
+        /* 平板 */
         @media (min-width: 768px) {
             .container {
-                padding: 0 24px;
+                padding: 24px 20px;
             }
-            .hero {
-                padding: 140px 24px 80px;
+            header {
+                padding: 48px 24px;
+                margin-bottom: 32px;
             }
-            .hero h1 {
-                font-size: 2.8em;
+            header h1 {
+                font-size: 1.8em;
             }
-            .hero .subtitle {
-                font-size: 1.15em;
+            header .subtitle {
+                font-size: 1em;
             }
-            .hero-stats {
-                gap: 48px;
+            .card {
+                padding: 28px;
+                margin-bottom: 20px;
             }
-            .stat-item .number {
-                font-size: 2.2em;
+            .card h2 {
+                font-size: 1.3em;
             }
-            .section {
-                padding: 64px 24px;
+            .report-item {
+                padding: 20px;
             }
-            .section-header h2 {
-                font-size: 2em;
-            }
-            .card-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-            .featured-report {
-                padding: 32px;
-            }
-            .featured-report h3 {
-                font-size: 1.4em;
+            .report-item a {
+                font-size: 1.1em;
             }
         }
-
         /* 桌面端 */
         @media (min-width: 1024px) {
             .container {
-                padding: 0 32px;
+                padding: 40px 24px;
             }
-            nav .container {
-                height: 70px;
+            header {
+                padding: 60px 24px;
             }
-            .logo {
-                font-size: 1.5em;
-            }
-            .hero {
-                padding: 160px 32px 100px;
-            }
-            .hero h1 {
-                font-size: 3.2em;
-            }
-            .hero .subtitle {
-                font-size: 1.25em;
-            }
-            .hero-stats {
-                gap: 60px;
-                margin-top: 50px;
-            }
-            .stat-item .number {
-                font-size: 2.5em;
-            }
-            .stat-item .label {
-                font-size: 0.9em;
-            }
-            .section {
-                padding: 80px 32px;
-            }
-            .section-header h2 {
+            header h1 {
                 font-size: 2.2em;
             }
-            .section-header p {
+            header .subtitle {
                 font-size: 1.1em;
-            }
-            .card-grid {
-                grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-                gap: 24px;
             }
             .card {
                 padding: 32px;
             }
-            .card h3 {
-                font-size: 1.3em;
-            }
-            .card p {
-                font-size: 0.95em;
-            }
-            .featured-report {
-                padding: 40px;
-                flex-direction: row;
-            }
-            .featured-report h3 {
-                font-size: 1.6em;
-            }
-            .featured-report p {
-                font-size: 1em;
-            }
-            .featured-report .btn {
-                padding: 14px 32px;
-                font-size: 1em;
-            }
-            .featured-report .preview {
-                width: 280px;
-                height: 180px;
-                margin-top: 0;
-            }
-            .category-tabs {
-                gap: 12px;
-                margin-bottom: 40px;
-            }
-            .category-tab {
-                padding: 10px 24px;
-                font-size: 0.95em;
-            }
-            .about-section {
-                padding: 80px 32px;
-            }
-            .about-section h2 {
-                font-size: 2em;
-            }
-            footer {
-                padding: 40px 32px;
+            .card h2 {
+                font-size: 1.5em;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav>
-        <div class="container">
-            <div class="logo">AI<span>Research</span></div>
-            <ul class="nav-links">
-                <li><a href="#home">首页</a></li>
-                <li><a href="#reports">研究报告</a></li>
-                <li><a href="#sectors">产业板块</a></li>
-                <li><a href="#about">关于</a></li>
+    <div class="container">
+        <header>
+            <h1>AI 知识研究</h1>
+            <div class="subtitle">深度产业洞察与战略分析</div>
+        </header>
+
+        <div class="card">
+            <h2>研究报告</h2>
+            <ul class="report-list">
+                <li class="report-item">
+                    <a href="pages/stock_research/07-02%20AI%E4%B8%8A%E6%B8%B8%E7%AE%97%E5%8A%9B%E4%BA%A7%E4%B8%9A%E9%93%BE%E5%8D%87%E7%BA%A7.html">AI 上游算力产业链升级报告</a>
+                    <div class="date">2026-07-02</div>
+                    <div class="desc">从"廉价代工"到"战略定价权"的结构性升级分析。深度解析中国 AI 上游算力产业链如何通过原材料管控、分级定价、纳米升级三大战略，实现利润占比从 3% 提升至 30% 以上的跃升路径。</div>
+                    <span class="tag tag-hot">热门</span>
+                    <span class="tag tag-new">深度报告</span>
+                </li>
             </ul>
         </div>
-    </nav>
 
-    <!-- Hero 区域 -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>AI 知识研究</h1>
-            <p class="subtitle">深度洞察人工智能产业链，从上游算力到下游应用，提供专业的战略分析与投资研究</p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="number">50+</span>
-                    <span class="label">深度报告</span>
-                </div>
-                <div class="stat-item">
-                    <span class="number">12</span>
-                    <span class="label">产业板块</span>
-                </div>
-                <div class="stat-item">
-                    <span class="number">2026</span>
-                    <span class="label">实时更新</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 最新报告 -->
-    <section class="section" id="reports">
-        <div class="container">
-            <div class="section-header">
-                <h2>最新研究报告</h2>
-                <p>聚焦 AI 产业核心赛道，提供前瞻性战略分析</p>
-                <div class="accent-line"></div>
-            </div>
-
-            <a href="pages/stock_research/07-02%20AI%E4%B8%8A%E6%B8%B8%E7%AE%97%E5%8A%9B%E4%BA%A7%E4%B8%9A%E9%93%BE%E5%8D%87%E7%BA%A7.html" class="featured-report">
-                <div class="content">
-                    <span class="tag tag-hot">热门</span>
-                    <h3>AI 上游算力产业链升级报告</h3>
-                    <p>从"廉价代工"到"战略定价权"的结构性升级分析。深度解析中国 AI 上游算力产业链如何通过原材料管控、分级定价、纳米升级三大战略，实现利润占比从 3% 提升至 30% 以上的跃升路径。</p>
-                    <span class="btn">阅读报告</span>
-                </div>
-                <div class="preview">⚡</div>
-            </a>
-
-            <div class="category-tabs">
-                <div class="category-tab active">全部</div>
-                <div class="category-tab">算力硬件</div>
-                <div class="category-tab">半导体</div>
-                <div class="category-tab">大模型</div>
-                <div class="category-tab">应用层</div>
-                <div class="category-tab">投资策略</div>
-            </div>
-
-            <div class="card-grid">
-                <a href="pages/stock_research/07-02%20AI%E4%B8%8A%E6%B8%B8%E7%AE%97%E5%8A%9B%E4%BA%A7%E4%B8%9A%E9%93%BE%E5%8D%87%E7%BA%A7.html" class="card">
-                    <div class="card-icon blue">⚡</div>
-                    <h3>AI 上游算力产业链升级</h3>
-                    <p>原材料管控 + 分级定价 + 纳米升级三轮驱动，2030年产值有望达 1.32-2.02 万亿美元。</p>
-                    <div class="meta">
-                        <span>📅 2026-07-02</span>
-                        <span>📄 深度报告</span>
-                    </div>
-                    <span class="tag tag-hot">热门</span>
-                </a>
-
-                <div class="card">
-                    <div class="card-icon green">🧠</div>
-                    <h3>大模型训练成本趋势分析</h3>
-                    <p>GPT-5 到 GPT-6 的训练成本预测，以及算力需求对上游供应链的影响分析。</p>
-                    <div class="meta">
-                        <span>📅 即将发布</span>
-                        <span>📄 趋势分析</span>
-                    </div>
-                    <span class="tag tag-new">筹备中</span>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon purple">💾</div>
-                    <h3>HBM 存储产业竞争格局</h3>
-                    <p>海力士、三星、美光三强争霸，中国存储产业的突围路径与投资机会。</p>
-                    <div class="meta">
-                        <span>📅 即将发布</span>
-                        <span>📄 产业研究</span>
-                    </div>
-                    <span class="tag tag-new">筹备中</span>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon orange">🏭</div>
-                    <h3>半导体材料国产替代进程</h3>
-                    <p>光刻胶、电子特气、CMP 抛光液等关键材料的国产化率追踪与标的梳理。</p>
-                    <div class="meta">
-                        <span>📅 即将发布</span>
-                        <span>📄 赛道梳理</span>
-                    </div>
-                    <span class="tag tag-new">筹备中</span>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon red">🎯</div>
-                    <h3>AI 应用层商业化落地</h3>
-                    <p>从 Agent 到机器人，AI 应用层的商业化进程与估值体系重构。</p>
-                    <div class="meta">
-                        <span>📅 即将发布</span>
-                        <span>📄 商业分析</span>
-                    </div>
-                    <span class="tag tag-new">筹备中</span>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon cyan">📊</div>
-                    <h3>AI 产业链投资策略框架</h3>
-                    <p>从上游算力到下游应用的全产业链投资框架，周期性把握与仓位管理。</p>
-                    <div class="meta">
-                        <span>📅 即将发布</span>
-                        <span>📄 策略框架</span>
-                    </div>
-                    <span class="tag tag-new">筹备中</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 产业板块 -->
-    <section class="section" id="sectors" style="background: linear-gradient(135deg, #0d1133 0%, #13183a 100%);">
-        <div class="container">
-            <div class="section-header">
-                <h2>研究板块</h2>
-                <p>覆盖 AI 全产业链核心环节</p>
-                <div class="accent-line"></div>
-            </div>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-icon blue">🔌</div>
-                    <h3>算力基础设施</h3>
-                    <p>GPU、TPU、NPU 等 AI 芯片，服务器、数据中心、液冷等基础设施产业链。</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon green">💿</div>
-                    <h3>存储与内存</h3>
-                    <p>HBM、DDR5、SSD 等存储技术，以及存储控制芯片与模组产业链。</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon purple">⚗️</div>
-                    <h3>半导体材料</h3>
-                    <p>硅片、光刻胶、电子特气、CMP 材料、靶材等上游材料。</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon orange">🔧</div>
-                    <h3>设备与制造</h3>
-                    <p>光刻机、刻蚀机、薄膜沉积等半导体设备，以及晶圆制造环节。</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon red">🌐</div>
-                    <h3>网络与互联</h3>
-                    <p>光模块、交换机、高速互联技术，以及数据中心网络架构。</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon cyan">🤖</div>
-                    <h3>AI 应用与终端</h3>
-                    <p>大模型、Agent、机器人、自动驾驶等下游应用场景。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 关于 -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <h2>关于 AI 知识研究</h2>
-            <p>我们专注于人工智能产业链的深度研究，从上游算力硬件到下游应用场景，提供专业的产业分析、战略洞察与投资建议。所有报告基于公开信息与行业调研，力求客观、深入、前瞻。</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>AI 知识研究 | 深度产业洞察与战略分析</p>
-            <p style="margin-top: 8px;">基于 GitHub Pages 构建 | <a href="https://github.com/CodeColliePup/ai-stock-sector-research">查看源码</a></p>
-        </div>
-    </footer>
+        <footer>
+            <p>AI 知识研究 | 基于 GitHub Pages 构建</p>
+        </footer>
+    </div>
 </body>
 </html>
