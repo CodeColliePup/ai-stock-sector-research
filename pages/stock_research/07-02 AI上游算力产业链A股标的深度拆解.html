@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI上游算力产业链A股标的深度拆解</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 16px 12px;
+        }
+        header {
+            text-align: center;
+            padding: 32px 16px;
+            background: linear-gradient(135deg, #1a2a6c 0%, #2d4a8a 50%, #4a6fa5 100%);
+            color: white;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(26, 42, 108, 0.25);
+        }
+        header h1 {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        header .subtitle {
+            font-size: 0.85em;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border-left: 4px solid #4a6fa5;
+        }
+        .card.highlight {
+            border-left-color: #e74c3c;
+            background: linear-gradient(to right, #fff 0%, #fff9f9 100%);
+        }
+        .card.success {
+            border-left-color: #27ae60;
+        }
+        .card h2 {
+            font-size: 1.15em;
+            color: #1a2a6c;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eef2f7;
+        }
+        .card h3 {
+            font-size: 1.05em;
+            color: #2d4a8a;
+            margin: 20px 0 10px 0;
+        }
+        .card h4 {
+            font-size: 0.95em;
+            color: #34495e;
+            margin: 16px 0 8px 0;
+        }
+        .note {
+            background: #fff8e1;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #f57f17;
+            font-size: 0.9em;
+            margin: 12px 0;
+        }
+        .note strong {
+            color: #856404;
+        }
+        .catalyst {
+            background: #e8f5e9;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+            font-size: 0.9em;
+            margin: 12px 0;
+            color: #2e7d32;
+        }
+        .catalyst strong {
+            color: #1b5e20;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 0.8em;
+            display: block;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        th {
+            background: #2d4a8a;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e8ecf1;
+            white-space: nowrap;
+        }
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        tr:hover {
+            background: #eef2f7;
+        }
+        .highlight-row {
+            background: #fff3cd !important;
+            font-weight: 600;
+        }
+        .highlight-row td {
+            color: #856404;
+        }
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        .tag-s {
+            background: #fee;
+            color: #c33;
+        }
+        .tag-a {
+            background: #fff8e1;
+            color: #856404;
+        }
+        .tag-star {
+            color: #f57f17;
+        }
+        .summary-box {
+            background: linear-gradient(135deg, #1a2a6c 0%, #2d4a8a 100%);
+            color: white;
+            padding: 24px 16px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .summary-box h2 {
+            color: #ffd700;
+            border-bottom: 2px solid rgba(255,215,0,0.3);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+            font-size: 1.2em;
+        }
+        .summary-box p {
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+        .summary-box strong {
+            color: #ffd700;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: #4a6fa5;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .back-link:hover {
+            color: #1a2a6c;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 16px;
+            color: #888;
+            font-size: 0.8em;
+            margin-top: 16px;
+        }
+        footer a {
+            color: #4a6fa5;
+            text-decoration: none;
+        }
+        /* 平板 */
+        @media (min-width: 768px) {
+            .container {
+                padding: 24px 20px;
+            }
+            header {
+                padding: 48px 24px;
+            }
+            header h1 {
+                font-size: 1.7em;
+            }
+            header .subtitle {
+                font-size: 1em;
+            }
+            .card {
+                padding: 28px;
+                margin-bottom: 20px;
+            }
+            .card h2 {
+                font-size: 1.3em;
+            }
+            .card h3 {
+                font-size: 1.15em;
+            }
+            table {
+                font-size: 0.9em;
+            }
+            th, td {
+                padding: 12px 14px;
+            }
+            .summary-box {
+                padding: 32px 24px;
+            }
+            .summary-box h2 {
+                font-size: 1.4em;
+            }
+        }
+        /* 桌面端 */
+        @media (min-width: 1024px) {
+            .container {
+                padding: 40px 24px;
+            }
+            header {
+                padding: 60px 24px;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            header .subtitle {
+                font-size: 1.1em;
+            }
+            .card {
+                padding: 32px;
+            }
+            .card h2 {
+                font-size: 1.5em;
+            }
+            .card h3 {
+                font-size: 1.2em;
+            }
+            table {
+                font-size: 0.95em;
+                display: table;
+            }
+            th, td {
+                padding: 14px 16px;
+                white-space: normal;
+            }
+            .summary-box {
+                padding: 40px;
+            }
+            .summary-box h2 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← 返回首页</a>
+
+        <header>
+            <h1>AI上游算力产业链A股标的深度拆解</h1>
+            <div class="subtitle">2026-07-02 · 算力金属/特气/材料/零件四大组别核心标的</div>
+        </header>
+
+        <div class="summary-box">
+            <h2>核心结论</h2>
+            <p>基于"AI上游算力产业链升级"战略框架，对<strong>算力金属、算力特气/化工、算力材料、算力零件/组件</strong>四大组别进行A股标的深度拆解。<br><br>
+            核心催化：<strong>钨出口管制</strong>→日本六氟化钨断供→全球缺口→价格暴涨5-7倍；<strong>3D NAND层数提升</strong>→"钼代钨"趋势加速→国产替代窗口期。<br><br>
+            重点关注<strong>S级标的</strong>：中船特气、中钨高新、江丰电子、有研新材、金钼股份、东方钽业、宏达电子、振华科技、生益科技、风华高科。</p>
+        </div>
+
+        <div class="card">
+            <h2>一、算力金属组</h2>
+
+            <h3>1.1 钨（半导体靶材、六氟化钨、PCB微钻）</h3>
+            <div class="note">
+                <strong>产业逻辑：</strong>中国占全球钨储量/产量约80%。2026年4月高纯钨出口管制后，日本六氟化钨生产商库存仅够5-6个月，价格从35万/吨暴涨至170-250万/吨。
+            </div>
+            <table>
+                <tr>
+                    <th>层级</th>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>全产业链龙头</td>
+                    <td><strong>中钨高新</strong></td>
+                    <td>000657</td>
+                    <td>五矿集团钨产业平台，全球最大柿竹园钨矿；PCB微钻龙头；6N高纯钨靶材、六氟化钨电子特气</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>全产业链龙头</td>
+                    <td><strong>厦门钨业</strong></td>
+                    <td>600549</td>
+                    <td>全球钨全产业链龙头，多座钨矿山；光伏钨丝市占超65%；6N5级高纯钨粉量产</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr>
+                    <td>资源端</td>
+                    <td>章源钨业</td>
+                    <td>002378</td>
+                    <td>民营钨资源龙头，多座高品位自有矿山，钨精矿自给率高</td>
+                    <td>★★★★</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>靶材端</td>
+                    <td><strong>江丰电子</strong></td>
+                    <td>300666</td>
+                    <td>超高纯溅射靶材龙头，半导体级高纯钨靶材量产，切入台积电、中芯国际</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr>
+                    <td>靶材端</td>
+                    <td>安泰科技</td>
+                    <td>000969</td>
+                    <td>12英寸半导体高纯钨溅射靶材量产，进入中芯国际供应链</td>
+                    <td>★★★★</td>
+                </tr>
+            </table>
+
+            <h3>1.2 钼（3D NAND"钼代钨"、半导体靶材）</h3>
+            <div class="note">
+                <strong>产业逻辑：</strong>SK海力士完成375层NAND验证并推进"以钼代钨"，钼靶材用于3D NAND字线、HBM存储薄膜沉积。
+            </div>
+            <table>
+                <tr>
+                    <th>层级</th>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>全产业链龙头</td>
+                    <td><strong>金钼股份</strong></td>
+                    <td>601958</td>
+                    <td>亚洲最大原生钼矿，唯一全产业链闭环；台积电、SK海力士认证</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>靶材端</td>
+                    <td><strong>隆华科技</strong></td>
+                    <td>300263</td>
+                    <td>四丰电子高纯钼靶材核心厂商，批量供货长江存储，进入三星供应链</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>靶材端</td>
+                    <td><strong>江丰电子</strong></td>
+                    <td>300666</td>
+                    <td>6N级12英寸高纯钼靶，进入中芯国际、长鑫存储、台积电</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>靶材端</td>
+                    <td><strong>有研新材</strong></td>
+                    <td>600206</td>
+                    <td>6N级12英寸钼靶量产，通过三星、SK海力士认证并小批量供货</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>1.3 锡（AI先进封装、HBM焊料）</h3>
+            <table>
+                <tr>
+                    <th>层级</th>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>全产业链龙头</td>
+                    <td><strong>锡业股份</strong></td>
+                    <td>000960</td>
+                    <td>全球精炼锡龙头；5N高纯锡批量供货HBM、Chiplet；伴生铟储量超4800吨全球领先</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>焊料端</td>
+                    <td><strong>唯特偶</strong></td>
+                    <td>301319</td>
+                    <td>国内微电子锡膏龙头，超细低温锡膏适配HBM堆叠、Chiplet；进入英伟达、华为供应链</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>1.4 铟（光模块、磷化铟光芯片）</h3>
+            <div class="note">
+                <strong>产业逻辑：</strong>800G/1.6T光模块激光器芯片必须使用磷化铟衬底，中国占全球铟产量约60%。
+            </div>
+            <table>
+                <tr>
+                    <th>层级</th>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>资源端</td>
+                    <td><strong>锡业股份</strong></td>
+                    <td>000960</td>
+                    <td>全球原生铟资源绝对龙头，伴生铟储量超4800吨；4N-7N超高纯铟锭量产</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>衬底端</td>
+                    <td><strong>云南锗业</strong></td>
+                    <td>002428</td>
+                    <td>国内磷化铟衬底量产龙头，4英寸稳定出货、6英寸迭代扩产；华为哈勃入股</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr>
+                    <td>冶炼端</td>
+                    <td>株冶集团</td>
+                    <td>600961</td>
+                    <td>锌冶炼伴生铟回收龙头，精铟年产量超120吨，5N及以上高纯铟量产</td>
+                    <td>★★★★</td>
+                </tr>
+            </table>
+
+            <h3>1.5 镓（GaN功率器件、GaAs光芯片）</h3>
+            <div class="note">
+                <strong>产业逻辑：</strong>氮化镓用于AI服务器电源，砷化镓用于800G光模块VCSEL芯片。中国占全球镓产量约90%，已实施出口管制。
+            </div>
+            <table>
+                <tr>
+                    <th>层级</th>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>资源端</td>
+                    <td><strong>中国铝业</strong></td>
+                    <td>601600</td>
+                    <td>全球最大原生金属镓生产商，国内占比近40%；6N-7N半导体级高纯镓量产</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>MO源</td>
+                    <td><strong>南大光电</strong></td>
+                    <td>300346</td>
+                    <td>国内高纯三甲基镓MO源绝对龙头，市占率超40%；砷化镓、氮化镓MOCVD必需</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>1.6 锗（光纤、红外探测器）</h3>
+            <table>
+                <tr>
+                    <th>层级</th>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>全产业链</td>
+                    <td><strong>云南锗业</strong></td>
+                    <td>002428</td>
+                    <td>A股唯一纯锗全产业链，量产光纤级四氯化锗；子公司鑫耀半导体量产2-6英寸磷化铟衬底</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr>
+                    <td>伴生回收</td>
+                    <td>驰宏锌锗</td>
+                    <td>600497</td>
+                    <td>铅锌冶炼副产回收金属锗，锗储量国内第二</td>
+                    <td>★★★★</td>
+                </tr>
+            </table>
+
+            <h3>1.7 钽（AI服务器钽电容核心原料）</h3>
+            <div class="note">
+                <strong>产业逻辑：</strong>AI服务器GPU电源模块需要高密度钽电容，东方钽业电容级钽粉国内市占50%+、全球20%-25%。
+            </div>
+            <table>
+                <tr>
+                    <th>层级</th>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>上游原料</td>
+                    <td><strong>东方钽业</strong></td>
+                    <td>000962</td>
+                    <td>钽粉国内市占50%+、全球20-25%，钽丝全球市占超60%；纳米晶高端钽粉适配AI服务器</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>钽电容</td>
+                    <td><strong>宏达电子</strong></td>
+                    <td>300726</td>
+                    <td>聚合物固态钽电容通过英伟达AI服务器认证；GPU供电、VRM电压调节模块</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>钽电容</td>
+                    <td><strong>振华科技</strong></td>
+                    <td>000733</td>
+                    <td>中电科央企平台，宇航级/军工级钽电容国内垄断；高端混合钽电容切入AI服务器</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>1.8 铜（算力基建核心）</h3>
+            <table>
+                <tr>
+                    <th>层级</th>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>高端铜箔</td>
+                    <td><strong>铜冠铜箔</strong></td>
+                    <td>301217</td>
+                    <td>国内唯一HVLP1-4全谱系高端铜箔；HVLP订单排至2027下半年</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>高端铜箔</td>
+                    <td><strong>德福科技</strong></td>
+                    <td>301511</td>
+                    <td>全球铜箔产能第一；国内唯一量产3μm载体铜箔（1.6T光模块刚需）；进入英伟达供应链</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>液冷铜管</td>
+                    <td><strong>海亮股份</strong></td>
+                    <td>002203</td>
+                    <td>数据中心液冷铜管龙头，AI算力集群散热管路核心供应商</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>1.9 钴（先进制程芯片互连、HBM靶材）</h3>
+            <table>
+                <tr>
+                    <th>层级</th>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>资源端</td>
+                    <td><strong>华友钴业</strong></td>
+                    <td>603799</td>
+                    <td>全球钴资源一体化龙头；4N5/5N半导体级高纯钴锭、高纯钴盐布局</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>靶材端</td>
+                    <td><strong>有研新材</strong></td>
+                    <td>600206</td>
+                    <td>12英寸7N超高纯钴靶规模化量产，国内市占率接近独家垄断</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>靶材端</td>
+                    <td><strong>江丰电子</strong></td>
+                    <td>300666</td>
+                    <td>12英寸高纯钴靶，通过台积电5nm认证，适配HBM高带宽存储</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>1.10 铂族金属（钌、铑，AI存储芯片电极）</h3>
+            <table>
+                <tr>
+                    <th>层级</th>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span>全产业链</td>
+                    <td><strong>贵研铂业</strong></td>
+                    <td>600459</td>
+                    <td>A股唯一完整铂族金属全产业链；6N级高纯钌靶国内独家批量供货长江存储、长鑫存储</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>二、算力特气/化工组</h2>
+
+            <h3>2.1 六氟化钨（芯片刻蚀核心）</h3>
+            <div class="catalyst">
+                <strong>核心催化：</strong>2026年4月高纯钨出口管制后，日本两大六氟化钨生产商库存5-6月内耗尽。国内5N级报价170-180万/吨，6N级200-250万/吨，较2022-2025年的35万/吨暴涨5-7倍。
+            </div>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>中船特气</strong></td>
+                    <td>688146</td>
+                    <td>全球六氟化钨龙头，唯一量产7N级；2000吨产能（2027年达3000吨）；批量供货台积电、中芯国际</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>昊华科技</strong></td>
+                    <td>600378</td>
+                    <td>旗下昊华气体6N级六氟化钨量产，600吨产能2026年全面放量</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>2.2 三氟化氮（刻蚀/清洗核心气体）</h3>
+            <div class="note">
+                <strong>产业逻辑：</strong>2025年日本三井化学退出三氟化氮生产，同年8月关东电化涩川工厂爆炸，全球市场减少约3700吨年供给能力。
+            </div>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>中船特气</strong></td>
+                    <td>688146</td>
+                    <td>三氟化氮18500吨产能世界前列；2024年集成电路特气领域销售收入国内第一、全球第九</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>昊华科技</strong></td>
+                    <td>600378</td>
+                    <td>西南地区新建6000吨三氟化氮装置，一期3000吨已于2025年10月投产</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>2.3 六氟丁二烯（先进制程刻蚀）</h3>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>昊华科技</strong></td>
+                    <td>600378</td>
+                    <td>全球第一的六氟丁二烯产能，规模达1000吨/年</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>2.4 含硅特气（硅外延片制造核心）</h3>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>三孚股份</strong></td>
+                    <td>603938</td>
+                    <td>亚洲少数9N级高纯四氯化硅量产企业；3万吨高纯四氯化硅设计产能；电子级二氯二氢硅/三氯氢硅国产替代初期</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>2.5 电子大宗气体（现场制气+氦气）</h3>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>广钢气体</strong></td>
+                    <td>688548</td>
+                    <td>电子大宗气体现场制气国内第一（中标产能占比41%）；国内唯一大批量、长期协议及全球多地气源采购渠道</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>金宏气体</strong></td>
+                    <td>688106</td>
+                    <td>电子大宗气体+特种气体综合供应商；12亿/8.5亿大单在手</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>华特气体</strong></td>
+                    <td>688268</td>
+                    <td>国内唯一多款稀混光刻气通过ASML+GIGAPHOTON认证；进口替代57款</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>2.6 光刻胶（芯片画图，卡脖子最严）</h3>
+            <div class="note">
+                <strong>产业逻辑：</strong>ArF/EUV高端光刻胶国产化率极低，南大光电是国内唯一28nm ArF浸没光刻胶量产企业。
+            </div>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>南大光电</strong></td>
+                    <td>300346</td>
+                    <td>国内唯一28nm ArF浸没光刻胶量产企业；三甲基镓MO源绝对龙头市占超40%</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>彤程新材</strong></td>
+                    <td>603650</td>
+                    <td>KrF光刻胶龙头，ArF批量导入，营收A股光刻胶第一</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>2.7 CMP抛光材料</h3>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>安集科技</strong></td>
+                    <td>688019</td>
+                    <td>抛光液A股绝对龙头，12寸全覆盖；国产替代核心标的</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>三、算力材料组</h2>
+
+            <h3>3.1 覆铜板/CCL（AI服务器基材）</h3>
+            <div class="note">
+                <strong>产业逻辑：</strong>英伟达M9级认证是行业最高标准，生益科技是大陆唯一通过该认证的企业。
+            </div>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>生益科技</strong></td>
+                    <td>600183</td>
+                    <td>大陆唯一英伟达M9级认证；M10高频板国内唯一量产；AI订单占比35%+，排至2027年底</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>华正新材</strong></td>
+                    <td>603186</td>
+                    <td>CBF膜（ABF替代）国内唯一量产，专供华为昇腾；M8-M9高速CCF自研PPE树脂</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>3.2 电子布（CCL上游）</h3>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>宏和科技</strong></td>
+                    <td>603256</td>
+                    <td>高端电子布龙头，超薄/低介电电子布国内领先；绑定生益、沪电，订单排至2027年</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>国际复材</strong></td>
+                    <td>301526</td>
+                    <td>低介电/超细电子布（3.7μm）国内唯一，英伟达/华为AI服务器认证</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>3.3 ABF基板/玻璃基板（先进封装核心载体）</h3>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>兴森科技</strong></td>
+                    <td>002436</td>
+                    <td>国内ABF载板核心厂商，封装基板深度绑定华为、英特尔；持续迭代玻璃基板样品</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>沃格光电</strong></td>
+                    <td>603773</td>
+                    <td>Mini/Micro LED玻璃基板+高速PCB玻璃基国内领先；1.6T光模块玻璃基刚需；TGV全流程小批量供货</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>3.4 HBM封装材料</h3>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>飞凯材料</strong></td>
+                    <td>300398</td>
+                    <td>最小50μm超低α锡球，适配HBM多层堆叠TCB热压键合；配套先进封装全套耗材</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>四、算力零件/组件组</h2>
+
+            <h3>4.1 溅射靶材（芯片镀膜）</h3>
+            <div class="note">
+                <strong>产业逻辑：</strong>先进制程节点越先进，靶材消耗量越大。江丰电子在铜、钽、钨靶材的市占率居全球第一。
+            </div>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>江丰电子</strong></td>
+                    <td>300666</td>
+                    <td>半导体超高纯溅射靶材龙头，2018年全球综合排名第一；铜/钽/钨靶材市占率全球第一；6N级12英寸高纯钼/钨/钴/钌靶；台积电5nm认证</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>有研新材</strong></td>
+                    <td>600206</td>
+                    <td>央企高纯新材料平台；12英寸7N超高纯钴靶国内独家；6N级钼靶三星/SK海力士认证；钌靶量产</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>4.2 封装基板/载板</h3>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>兴森科技</strong></td>
+                    <td>002436</td>
+                    <td>国内ABF载板核心厂商，封装基板深度绑定华为、英特尔</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>深南电路</strong></td>
+                    <td>002916</td>
+                    <td>国内PCB龙头，封装基板业务国内领先；深度绑定华为、中兴</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>长电科技</strong></td>
+                    <td>600584</td>
+                    <td>全球第三大封测厂，布局玻璃基封测；先进封装技术国内领先</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>通富微电</strong></td>
+                    <td>002156</td>
+                    <td>国内第二大封测厂，布局玻璃基封测；深度绑定AMD</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>4.3 MLCC/片式电容（"电子工业大米"）</h3>
+            <div class="note">
+                <strong>产业逻辑：</strong>村田整体MLCC产能利用率90%-95%，AI相关订单量是现有产能的两倍。风华高科是国内MLCC产能第一。
+            </div>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>风华高科</strong></td>
+                    <td>000636</td>
+                    <td>国内MLCC产能第一；AI高容MLCC（100μF）量产，毛利率35%-40%；订单排至2027Q2</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>三环集团</strong></td>
+                    <td>300408</td>
+                    <td>MLCC钛酸钡粉体100%自研自给（成本低20%-30%）；英伟达GPU氧化铝基板全球市占50%</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>4.4 电感/磁粉芯（AI芯片电源管理）</h3>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>铂科新材</strong></td>
+                    <td>300811</td>
+                    <td>AI芯片电感龙头供应商；全球金属软磁粉芯龙头；芯片电感收入2025年+275.8%</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>顺络电子</strong></td>
+                    <td>002138</td>
+                    <td>国内片式电感龙头；低ESR聚合物钽电容已进入头部算力客户</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>4.5 PCB刀具/耗材（AI钻孔刚需）</h3>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>鼎泰高科</strong></td>
+                    <td>301377</td>
+                    <td>全球PCB钻针市占29%（第一）；0.2mm以下微钻占比30%；50倍长径比突破；AI微钻订单排至2027年</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>中钨高新</strong></td>
+                    <td>000657</td>
+                    <td>子公司金洲精工全球第二大PCB微钻，50倍长径比国内唯一；AI服务器微钻国内市占70%-80%</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+
+            <h3>4.6 光模块/光芯片（800G/1.6T算力互联）</h3>
+            <table>
+                <tr>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>核心逻辑</th>
+                    <th>关联度</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>中际旭创</strong></td>
+                    <td>300308</td>
+                    <td>全球光模块龙头，800G/1.6T光模块核心供应商；深度绑定英伟达、谷歌</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>新易盛</strong></td>
+                    <td>300502</td>
+                    <td>全球光模块龙头，800G/1.6T光模块核心供应商</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>天孚通信</strong></td>
+                    <td>300394</td>
+                    <td>光器件龙头，为光模块厂商提供核心无源器件</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>光库科技</strong></td>
+                    <td>300620</td>
+                    <td>铌酸锂调制器芯片国内唯一量产；高速光模块核心器件，1.6T刚需</td>
+                    <td><span class="tag-star">★★★★★</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card success">
+            <h2>五、S级核心标的汇总</h2>
+            <table>
+                <tr>
+                    <th>优先级</th>
+                    <th>标的</th>
+                    <th>代码</th>
+                    <th>所属组别</th>
+                    <th>核心逻辑</th>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span></td>
+                    <td><strong>中船特气</strong></td>
+                    <td>688146</td>
+                    <td>算力特气</td>
+                    <td>全球六氟化钨龙头，唯一量产7N级；三氟化氮18500吨产能世界前列</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span></td>
+                    <td><strong>中钨高新</strong></td>
+                    <td>000657</td>
+                    <td>算力金属</td>
+                    <td>全球最大单体钨矿+PCB微钻龙头+6N高纯钨靶材+六氟化钨电子特气</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span></td>
+                    <td><strong>江丰电子</strong></td>
+                    <td>300666</td>
+                    <td>靶材/金属</td>
+                    <td>超高纯溅射靶材龙头，铜/钽/钨/钼/钴/钌靶材全覆盖；台积电5nm认证</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span></td>
+                    <td><strong>有研新材</strong></td>
+                    <td>600206</td>
+                    <td>靶材/金属</td>
+                    <td>央企高纯新材料平台，7N钴靶国内独家、6N钼靶三星/SK海力士认证</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span></td>
+                    <td><strong>金钼股份</strong></td>
+                    <td>601958</td>
+                    <td>算力金属</td>
+                    <td>亚洲最大原生钼矿，唯一全产业链闭环；台积电/SK海力士认证</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span></td>
+                    <td><strong>东方钽业</strong></td>
+                    <td>000962</td>
+                    <td>算力金属</td>
+                    <td>钽粉国内市占50%+、全球20-25%，钽丝全球市占超60%</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span></td>
+                    <td><strong>宏达电子</strong></td>
+                    <td>300726</td>
+                    <td>算力零件</td>
+                    <td>聚合物固态钽电容通过英伟达AI服务器认证；GPU供电核心</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span></td>
+                    <td><strong>振华科技</strong></td>
+                    <td>000733</td>
+                    <td>算力零件</td>
+                    <td>中电科央企，宇航级/军工级钽电容国内垄断；高端混合钽电容切入AI服务器</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span></td>
+                    <td><strong>生益科技</strong></td>
+                    <td>600183</td>
+                    <td>算力材料</td>
+                    <td>大陆唯一英伟达M9级认证；M10高频板国内唯一量产</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><span class="tag tag-s">S级</span></td>
+                    <td><strong>风华高科</strong></td>
+                    <td>000636</td>
+                    <td>算力零件</td>
+                    <td>国内MLCC产能第一；AI高容MLCC量产；订单排至2027Q2</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>免责声明</h2>
+            <p style="font-size: 0.9em; color: #666; line-height: 1.8;">
+                本报告基于2026年7月公开信息整理，结合"AI上游算力产业链升级"战略框架，对算力金属、算力特气/化工、算力材料、算力零件/组件四大组别进行A股标的深度拆解。<strong>所有信息仅供参考，不构成投资建议。</strong>市场有风险，投资需谨慎。投资者应根据自身风险承受能力、投资期限和投资目标，审慎做出投资决策。
+            </p>
+        </div>
+
+        <footer>
+            <p>本报告基于2026年7月2日公开信息整理 | 涉及大量战略推演与标的分析</p>
+            <p>核心逻辑："上游原材料管控 + 分级定价 + 纳米升级"三轮驱动</p>
+        </footer>
+    </div>
+</body>
+</html>
